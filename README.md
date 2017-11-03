@@ -16,17 +16,17 @@ You can find more details in our MICRO 2017 paper:
 
 ### Compile 
 
-scons 
+    scons -j
 
 Please read the description in the zsim project (https://github.com/s5z/zsim) for details for setting the simulator.  
 
 ### Run    Test
 
-./build/opt/zsim tests/test.cfg
+    ./build/opt/zsim tests/test.cfg
 
 ## Different Cache Designs
 
-Please read tests/test.cfg for an example configuration file. Below we summerize the parameter settings for running each DRAM cache design. 
+Please read tests/test.cfg for an example configuration file. Below we summerize the parameter settings for running each DRAM cache design that we support.
 
 ### Banshee
 ```
@@ -83,6 +83,7 @@ mem = {
     ...  
     cache_scheme = "Tagless";
     mcdram = {  
+        ...
         cache_granularity = 4096;  
          footprint_size = 64;   
         num_ways = size * 1024 * 1024 / lineSize; 
