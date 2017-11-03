@@ -48,9 +48,10 @@ mem = {
 
 ```
 mem = {  
-   ...  
-   cache_scheme = "AlloyCache";
-   mcdram = {  
+    ...  
+    cache_scheme = "AlloyCache";
+    mcdram = {  
+        ...
         cache_granularity = 64;  
         num_ways = 1;  
         placementPolicy = "LRU";  
@@ -62,9 +63,10 @@ mem = {
 
 ```
 mem = {  
-   ...  
-   cache_scheme = "UnisonCache";
-   mcdram = {  
+    ...  
+    cache_scheme = "UnisonCache";
+    mcdram = {  
+        ...
         cache_granularity = 4096; 
         footprint_size = 64;  
         num_ways = 4;  
@@ -78,9 +80,9 @@ mem = {
 
 ```
 mem = {  
-   ...  
-   cache_scheme = "Tagless";
-   mcdram = {  
+    ...  
+    cache_scheme = "Tagless";
+    mcdram = {  
         cache_granularity = 4096;  
          footprint_size = 64;   
         num_ways = size * 1024 * 1024 / lineSize; 
