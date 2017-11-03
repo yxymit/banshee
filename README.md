@@ -20,7 +20,7 @@ scons
 
 Please read the description in the zsim project (https://github.com/s5z/zsim) for details for setting the simulator.  
 
-### Run	Test
+### Run    Test
 
 ./build/opt/zsim tests/test.cfg
 
@@ -29,54 +29,61 @@ Please read the description in the zsim project (https://github.com/s5z/zsim) fo
 Please read tests/test.cfg for an example configuration file. Below we summerize the parameter settings for running each DRAM cache design. 
 
 ### Banshee
-
+```
 mem = {  
->	...  
->	cache_scheme = "HybridCache";  
->	mcdram = {  
->>		...  
->>		cache_granularity = 4096;  
->>		num_ways = 4;  
->>		placementPolicy = "FBR";  
->>		sampleRate = 0.1;  
->>		tag_buffer_size = 1024;  
->	}  
+    ...  
+    cache_scheme = "HybridCache";  
+    mcdram = {  
+        ...  
+        cache_granularity = 4096;  
+        num_ways = 4;  
+        placementPolicy = "FBR";  
+        sampleRate = 0.1;  
+        tag_buffer_size = 1024;  
+    }  
 } 
+```
 
 ### Alloy Cache
 
+```
 mem = {  
->   ...  
->   cache_scheme = "AlloyCache";
->   mcdram = {  
->>		cache_granularity = 64;  
->>		num_ways = 1;  
->>		placementPolicy = "LRU";  
->	}
+   ...  
+   cache_scheme = "AlloyCache";
+   mcdram = {  
+        cache_granularity = 64;  
+        num_ways = 1;  
+        placementPolicy = "LRU";  
+    }
 }
+```
 
 ### Unison Cache 
 
+```
 mem = {  
->   ...  
->   cache_scheme = "UnisonCache";
->   mcdram = {  
->>		cache_granularity = 4096; 
->>		footprint_size = 64;  
->>		num_ways = 4;  
->>		placementPolicy = "LRU"; 
->>		sampleRate = 1.0;
->	}
+   ...  
+   cache_scheme = "UnisonCache";
+   mcdram = {  
+        cache_granularity = 4096; 
+        footprint_size = 64;  
+        num_ways = 4;  
+        placementPolicy = "LRU"; 
+        sampleRate = 1.0;
+    }
 }
+```
 
 ### Tagless DRAM Cache (TDC) 
 
+```
 mem = {  
->   ...  
->   cache_scheme = "Tagless";
->   mcdram = {  
->>		cache_granularity = 4096;  
->> 		footprint_size = 64;   
->>		num_ways = size * 1024 * 1024 / lineSize; 
->	}
+   ...  
+   cache_scheme = "Tagless";
+   mcdram = {  
+        cache_granularity = 4096;  
+         footprint_size = 64;   
+        num_ways = size * 1024 * 1024 / lineSize; 
+    }
 }
+```
